@@ -20,6 +20,9 @@ app.get('/api', function (req,res) {
       'feature': req.query.feature
     }
   }
+
+  // http://expressjs.com/api.html#res.json
+  res.json(response_data);
 });
  
 http.createServer(app).listen(app.get('port'), function(){
