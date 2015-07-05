@@ -20,7 +20,9 @@ app.get('/api', function (req,res) {
       'feature': req.query.feature
     },
     'response': {
-      'field1': 'some data from the server'
+      'name': 'The Crescent Reserve Playground',
+      'latitude': -37.79409600,
+      'longitude': 144.91961600
     }
   }
 
