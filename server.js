@@ -6,12 +6,9 @@ var express = require('express');
 // Query with explicit connection
 // https://github.com/Azure/node-sqlserver/wiki
 
-// var sql = require('msnodesql');
-// with something like this in the package     "express": "~4.13.0"
+var sql = require('msnodesql');
+var conn_str = "Driver={SQL Server Native Client 11.0};Server=tcp:yourserver.database.windows.net,1433;Database=parks;User ID=parks@hzbcrprwfg;Password=Cassie01;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;";
 
-//var conn_str = "Driver={SQL Server Native Client 11.0};Server={(localdb)\\v11.0};Database={DBName};Trusted_Connection={Yes};";
-
- 
 var app = express();
 app.set('port', process.env.PORT || 3000); 
 
@@ -27,15 +24,12 @@ app.get('/', function (req, res) {
 app.get('/api', function (req,res) {
   // res.send(req.query.latitude + ' ' + req.query.longitude + ' ' + req.query.feature);
 
-  // sql query goes here, perhaps...
-  
-  /*
   sql.open(conn_str, function (err, conn) {
     if (err) {
         console.log("Error opening the connection!");
         return;
     }
-    conn.queryRaw("SELECT * FROM TestTable", function (err, results) {
+    conn.queryRaw("EXEC [Parks].[Find parks] " + req.query.latitude + ", " + req.query.latitude + ", '" + req.query.feature + "'", function (err, results) {
         if (err) {
             console.log("Error running query!");
             return;
@@ -45,7 +39,6 @@ app.get('/api', function (req,res) {
         }
     });
   });
-*/
 
   var response_data = {
     'request': {
