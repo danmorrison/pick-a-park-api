@@ -28,11 +28,13 @@ app.get('/api', function (req,res) {
       'longitude': req.query.longitude, 
       'feature': req.query.feature
     },
-    'response': {
-      'name': 'The Crescent Reserve Playground',
-      'latitude': -37.79409600,
-      'longitude': 144.91961600
-    }
+    'response': [
+      {'name': 'The Crescent Reserve Playground', 'latitude': -37.79409600, 'longitude': 144.91961600},
+      {'name': 'Kensington Hall Reserve Playground', 'latitude': -37.78842300, 'longitude': 144.92751800},
+      {'name': 'Liddy Street Reserve Playground', 'latitude': -37.78993400, 'longitude': 144.92578900},
+      {'name': 'Mercantile Parade and Newman Street Playground', 'latitude': -37.79550300, 'longitude': 144.92038600},
+      {'name': 'Bayswater Road Reserve Playground', 'latitude': -37.79371200, 'longitude': 144.92350700}
+    ]
   }
 
   // Return a result as JSON
