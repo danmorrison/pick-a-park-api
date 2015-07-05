@@ -8,8 +8,8 @@ app.get('/', function (req, res) {
   res.send('<html><body><h1>Hello World</h1><p>home of pick-a-park-api<br>use <pre>/api?latitude=123&longitude=234&feature=abc</pre></body></html>');
 });
 
-app.get('/api:latitude?/:longitude?/:feature?', function (req,res) {
-  res.send(req.params.latitude + ' ' + req.params.longitude + ' ' + req.params.feature);
+app.get('/api', function (req,res) {
+  res.send(req.query.latitude + ' ' + req.query.longitude + ' ' + req.query.feature);
 });
  
 http.createServer(app).listen(app.get('port'), function(){

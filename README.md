@@ -12,4 +12,8 @@ example...
 
 http://pickapark.azurewebsites.net/api?latitude=123&longitude=234&feature=abc
 
+
+notes
+Azure running node version: v0.10.32
+
 ```
