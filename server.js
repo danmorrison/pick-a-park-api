@@ -9,7 +9,17 @@ app.get('/', function (req, res) {
 });
 
 app.get('/api', function (req,res) {
-  res.send(req.query.latitude + ' ' + req.query.longitude + ' ' + req.query.feature);
+  // res.send(req.query.latitude + ' ' + req.query.longitude + ' ' + req.query.feature);
+
+  // sql query goes here, perhaps...
+
+  var response_data = {
+    'request': {
+      'latitude': req.query.latitude, 
+      'longitude': req.query.longitude, 
+      'feature': req.query.feature
+    }
+  }
 });
  
 http.createServer(app).listen(app.get('port'), function(){
