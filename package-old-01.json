@@ -17,4 +17,4 @@
 }
 
 
-    "node-sqlserver": "~0.2.1"
+    "msnodesql": "~0.2.1"
