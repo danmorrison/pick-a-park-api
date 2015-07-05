@@ -3,7 +3,11 @@ var express = require('express');
 
 // SQL Access
 // Note: From the source, it currently only supports native sql server types.
-// ?????var sql = require('node-sqlserver');
+// Query with explicit connection
+// https://github.com/Azure/node-sqlserver/wiki
+var sql = require('msnodesql');
+//var conn_str = "Driver={SQL Server Native Client 11.0};Server={(localdb)\\v11.0};Database={DBName};Trusted_Connection={Yes};";
+
  
 var app = express();
 app.set('port', process.env.PORT || 3000); 
@@ -21,6 +25,24 @@ app.get('/api', function (req,res) {
   // res.send(req.query.latitude + ' ' + req.query.longitude + ' ' + req.query.feature);
 
   // sql query goes here, perhaps...
+  
+  /*
+  sql.open(conn_str, function (err, conn) {
+    if (err) {
+        console.log("Error opening the connection!");
+        return;
+    }
+    conn.queryRaw("SELECT * FROM TestTable", function (err, results) {
+        if (err) {
+            console.log("Error running query!");
+            return;
+        }
+        for (var i = 0; i < results.rows.length; i++) {
+            console.log("0:" + results.rows[i][0]);
+        }
+    });
+  });
+*/
 
   var response_data = {
     'request': {
@@ -46,3 +68,5 @@ app.get('/api', function (req,res) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
