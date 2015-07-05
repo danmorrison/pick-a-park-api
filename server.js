@@ -3,7 +3,7 @@ var express = require('express');
 
 // SQL Access
 // Note: From the source, it currently only supports native sql server types.
-var sql = require('node-sqlserver');
+// ?????var sql = require('node-sqlserver');
  
 var app = express();
 app.set('port', process.env.PORT || 3000); 
