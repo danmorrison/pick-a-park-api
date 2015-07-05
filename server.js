@@ -18,9 +18,9 @@ app.get('/api', function (req,res) {
       'latitude': req.query.latitude, 
       'longitude': req.query.longitude, 
       'feature': req.query.feature
+    },
     'response': {
       'field1': 'some data from the server'
-    }
     }
   }
 
