@@ -5,7 +5,10 @@ var express = require('express');
 // Note: From the source, it currently only supports native sql server types.
 // Query with explicit connection
 // https://github.com/Azure/node-sqlserver/wiki
-var sql = require('msnodesql');
+
+// var sql = require('msnodesql');
+// with something like this in the package     "express": "~4.13.0"
+
 //var conn_str = "Driver={SQL Server Native Client 11.0};Server={(localdb)\\v11.0};Database={DBName};Trusted_Connection={Yes};";
 
  
